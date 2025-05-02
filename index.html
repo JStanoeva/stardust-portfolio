@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tora Blaze - Creative Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Apply Inter font globally */
+      body {
+        font-family: "Inter", sans-serif;
+        /* Gradient background */
+        background-image: linear-gradient(to bottom, #392d51, #624975, #8c5c87);
+        min-height: 100vh;
+        color: #ffffff;
+        /* Prevent horizontal overflow */
+        overflow-x: hidden;
+        /* Flex layout to push footer down */
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Apply Pacifico font to specific heading elements */
+      .font-pacifico {
+        font-family: "Pacifico", cursive;
+        font-weight: 400; /* Pacifico only has regular weight */
+      }
+
+      /* Make main content area grow */
+      .main-content {
+        flex-grow: 1;
+      }
+
+      /* Star effect styling */
+      .star {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background-color: #fcd34d; /* amber-300 */
+        border-radius: 50%;
+        animation: twinkle 2s infinite ease-in-out alternate;
+        pointer-events: none;
+      }
+
+      /* Twinkling animation */
+      @keyframes twinkle {
+        0% {
+          opacity: 0.4;
+          transform: scale(0.8);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* Custom styles for portfolio image aspect ratio and object fit */
+      .portfolio-image-container {
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        border-radius: 0.375rem; /* rounded-md */
+      }
+
+      .portfolio-img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+      }
+
+      /* Hero image specific styles */
+      .hero-img {
+        object-fit: contain;
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* About Me image specific styles */
+      .about-img {
+        object-fit: cover;
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        border-radius: 0.5rem; /* rounded-lg */
+        margin-left: auto;
+        margin-right: auto;
+        /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05); */
+      }
+
+      /* Style for the portfolio item text overlay */
+      .portfolio-item-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(90, 73, 103, 0.9);
+        color: white;
+        padding: 0.75rem; /* p-3 */
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        border-bottom-left-radius: 0.375rem; /* rounded-b-md */
+        border-bottom-right-radius: 0.375rem;
+        font-weight: 500; /* medium */
+      }
+
+      /* Show overlay text on parent group hover */
+      .group:hover .portfolio-item-overlay {
+        opacity: 1;
+      }
+
+      /* Style changes for image on parent group hover */
+      .group:hover .portfolio-img {
+        filter: brightness(1);
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body class="relative">
+    <div
+      id="star-container"
+      class="absolute inset-0 z-0 overflow-hidden"
+      aria-hidden="true"
+    ></div>
+
+    <div class="main-content relative z-10">
+      <div class="container mx-auto px-6 py-8">
+        <header
+          class="flex flex-wrap justify-between items-center mb-16 sm:mb-20"
+        >
+          <h1
+            class="font-pacifico text-3xl sm:text-4xl text-white mb-4 sm:mb-0 w-full sm:w-auto text-center sm:text-left"
+          >
+            Tora Blaze
+          </h1>
+          <nav class="w-full sm:w-auto">
+            <ul
+              class="flex justify-center sm:justify-end space-x-6 text-sm font-medium uppercase tracking-wider"
+            >
+              <li>
+                <a
+                  href="#interests"
+                  class="text-amber-300 hover:text-white transition-colors duration-300"
+                >
+                  Interests
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-amber-300 hover:text-white transition-colors duration-300"
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-amber-300 hover:text-white transition-colors duration-300"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <main>
+          <section
+            id="hero"
+            class="flex flex-col md:flex-row items-center justify-between mb-24 md:mb-32"
+          >
+            <div class="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
+              <h2
+                class="font-pacifico text-5xl sm:text-6xl lg:text-7xl mb-4 leading-tight"
+              >
+                Hello! I'm&nbsp;Tora
+              </h2>
+              <p class="text-xl sm:text-2xl text-amber-300 font-medium mb-4">
+                Cat Lover & Cosmic Dreamer
+              </p>
+              <p class="mb-8 text-lg sm:text-xl text-gray-200">
+                I create whimsical illustrations, cosmic designs, and
+                cheese-themed art.
+              </p>
+              <a
+                href="#interests"
+                class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md font-medium text-lg transition-colors duration-300 shadow-md hover:shadow-lg"
+              >
+                View My Interests
+              </a>
+            </div>
+            <div class="md:w-1/2 flex justify-center items-center mt-8 md:mt-0">
+              <img
+                src="hero-image.png"
+                alt="Stylized illustration of Tora Blaze pointing upwards with a friendly smile"
+                class="hero-img"
+                onerror="this.onerror=null; this.src='https://placehold.co/600x600/5a4967/ffffff?text=Tora+Here!'; this.alt='Placeholder image for Tora illustration'"
+              />
+            </div>
+          </section>
+
+          <section id="interests" class="mb-24 md:mb-32">
+            <h3
+              class="font-pacifico text-4xl sm:text-5xl text-center mb-12 sm:mb-16"
+            >
+              My Interests
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div
+                class="group relative bg-purple-900/50 rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl"
+              >
+                <div class="portfolio-image-container">
+                  <img
+                    src="cat-petting.png"
+                    alt="Whimsical illustration of a person gently petting a happy, fluffy cat"
+                    class="portfolio-img filter brightness-75"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x450/5a4967/ffffff?text=Cat+Art'; this.alt='Placeholder for cat petting illustration'"
+                  />
+                </div>
+                <div class="portfolio-item-overlay">Cat Petting</div>
+              </div>
+
+              <div
+                class="group relative bg-purple-900/50 rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl"
+              >
+                <div class="portfolio-image-container">
+                  <img
+                    src="black-hole-boop.png"
+                    alt="Cosmic art depicting a hand reaching out to gently touch a stylized black hole"
+                    class="portfolio-img filter brightness-75"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x450/5a4967/ffffff?text=Cosmic+Art'; this.alt='Placeholder for black hole booping illustration'"
+                  />
+                </div>
+                <div class="portfolio-item-overlay">Black Hole Booping</div>
+              </div>
+
+              <div
+                class="group relative bg-purple-900/50 rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl"
+              >
+                <div class="portfolio-image-container">
+                  <img
+                    src="cheese.png"
+                    alt="Cute illustration of a smiling, happy block of cheese with little arms and legs"
+                    class="portfolio-img filter brightness-75"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x450/5a4967/ffffff?text=Cheese+Art'; this.alt='Placeholder for happy cheese illustration'"
+                  />
+                </div>
+                <div class="portfolio-item-overlay">Just Cheesin'</div>
+              </div>
+            </div>
+          </section>
+
+          <section id="about" class="py-16 mb-16 md:mb-24">
+            <div
+              class="flex flex-col md:flex-row items-center gap-12 lg:gap-16"
+            >
+              <div
+                class="w-full md:w-5/12 flex justify-center mb-8 md:mb-0 order-1 md:order-1"
+              >
+                <img
+                  src="about-me-image.png"
+                  alt="Whimsical illustration representing Tora's creative spirit, perhaps featuring stars or cats"
+                  class="about-img"
+                  onerror="this.onerror=null; this.src='https://placehold.co/400x500/5a4967/ffffff?text=About+Tora'; this.alt='Placeholder image for About Me section'"
+                />
+              </div>
+              <div
+                class="w-full md:w-7/12 text-center md:text-left order-2 md:order-2 max-w-prose"
+              >
+                <h3 class="font-pacifico text-4xl sm:text-5xl mb-6">
+                  About Me
+                </h3>
+                <div
+                  class="space-y-4 text-lg leading-relaxed text-gray-200 text-justify"
+                >
+                  <p>
+                    Hello! I'm Tora Blaze – a cosmic dreamer, cat lover, and
+                    whimsical illustrator exploring the universe through art,
+                    code, and story. As Queen Tora of the Cheese Republic (a
+                    joyful mission I share with my best friend, King Orion!), I
+                    believe in blending creativity with curiosity.
+                  </p>
+                  <p>
+                    You'll find this in my passion for writing science fiction
+                    novels that delve into AI and imagination, my quest to
+                    become a web developer starting with JavaScript (and soon
+                    React & Python!), and even in my love for singing. Let's
+                    create something magical! ✨
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section
+            id="contact"
+            class="py-12 sm:py-16 text-center rounded-lg bg-indigo-950/20"
+          >
+            <h3 class="font-pacifico text-4xl sm:text-5xl mb-6">
+              Get In Touch
+            </h3>
+            <p class="mb-8 text-lg text-gray-200">
+              Have a project idea or just want to say hi? I'd love to hear from
+              you!
+            </p>
+            <div class="mb-8">
+              <a
+                href="mailto:your.email@example.com"
+                class="inline-block text-xl text-amber-300 hover:text-white border-b border-amber-400/50 hover:border-white transition-all duration-300 pb-1"
+              >
+                your.email@example.com
+              </a>
+            </div>
+            <div class="flex justify-center items-center space-x-6">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-300 hover:text-amber-300 transition-colors duration-300 text-sm uppercase tracking-wider font-medium"
+                >GitHub</a
+              >
+              <span class="text-gray-500">|</span>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-300 hover:text-amber-300 transition-colors duration-300 text-sm uppercase tracking-wider font-medium"
+                >LinkedIn</a
+              >
+              <span class="text-gray-500">|</span>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-300 hover:text-amber-300 transition-colors duration-300 text-sm uppercase tracking-wider font-medium"
+                >ArtStation</a
+              >
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <footer
+      class="w-full py-6 px-6 text-center text-sm text-gray-400 border-t border-white/10 mt-12"
+    >
+      <p>
+        Copyright &copy; <span id="copyright-year"></span> Tora Blaze. All
+        Rights Reserved. Designed with 🧀 & ✨.
+      </p>
+    </footer>
+
+    <script>
+      // Debounce function to limit the rate at which a function can fire.
+      function debounce(func, wait, immediate) {
+        let timeout;
+        return function executedFunction() {
+          const context = this;
+          const args = arguments;
+          const later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+          };
+          const callNow = immediate && !timeout;
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+          if (callNow) func.apply(context, args);
+        };
+      }
+
+      // Function to create stars
+      function createStars() {
+        const container = document.getElementById("star-container");
+        if (!container) {
+          console.error("Star container not found!");
+          return;
+        }
+        // Clear existing stars before adding new ones
+        container.innerHTML = "";
+        // *** UPDATED STAR COUNT HERE ***
+        const numStars = window.innerWidth < 768 ? 200 : 1000; // More stars!
+
+        for (let i = 0; i < numStars; i++) {
+          const star = document.createElement("div");
+          star.classList.add("star");
+          // Position stars randomly across the viewport
+          star.style.left = `${Math.random() * 100}%`;
+          star.style.top = `${Math.random() * 100}%`;
+          // Randomize animation delay for a more natural twinkle
+          star.style.animationDelay = `${Math.random() * 2.5}s`;
+          // Randomize star size
+          const size = Math.random() * 1.5 + 0.5; // Smaller range for size
+          star.style.width = `${size}px`;
+          star.style.height = `${size}px`;
+          // Randomize initial opacity slightly for variation
+          star.style.opacity = Math.random() * 0.5 + 0.3; // Start between 0.3 and 0.8
+
+          container.appendChild(star);
+        }
+      }
+
+      // Function to set the current year in the footer
+      function setCopyrightYear() {
+        const yearSpan = document.getElementById("copyright-year");
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        } else {
+          console.error("Copyright year span not found!");
+        }
+      }
+
+      // Debounced version of createStars for resize events
+      const debouncedCreateStars = debounce(createStars, 250); // Adjust wait time (ms) as needed
+
+      // Initial setup when the window loads
+      window.addEventListener("load", () => {
+        setCopyrightYear();
+        createStars(); // Create initial stars
+      });
+
+      // Recreate stars on window resize, but debounced
+      window.addEventListener("resize", debouncedCreateStars);
+    </script>
+  </body>
+</html>
