@@ -387,7 +387,7 @@
         }
         // Clear existing stars before adding new ones
         container.innerHTML = "";
-        // *** UPDATED STAR COUNT HERE ***
+        // Determine number of stars based on screen width
         const numStars = window.innerWidth < 768 ? 200 : 1000; // More stars!
 
         for (let i = 0; i < numStars; i++) {
