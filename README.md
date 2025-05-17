@@ -4,4 +4,4 @@ Uses HTML and Tailwind CSS for the styling and JavaScript for the background sta
 All images are created in Sora. </br>
 Made with Gemini's help. </br>
 
-<a href="https://jstanoeva.github.io/stardust-portfolio/">Stardust Portfolio</a>
+<a href="https://jstanoeva.github.io/stardust-portfolio/" target="_blank">Stardust Portfolio</a>
