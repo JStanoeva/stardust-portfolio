@@ -20,6 +20,7 @@ Welcome to the official GitHub repository for my personal portfolio website! Thi
 * **Custom CSS:** For bespoke styles like the gradient background, star animations, and specific hover effects.
 * **JavaScript (Vanilla):** To power the dynamic starry background and the automatically updating copyright year.
 * **Google Fonts:** Utilizing the "Open Sans" font for a clean and friendly typographic feel.
+* **Sora:** For the floofy images.
 
 ## 🚀 Journey & Future Plans
 
