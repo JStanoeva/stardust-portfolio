@@ -25,11 +25,23 @@ function setCopyrightYear() {
   }
 }
 
-const debouncedCreateStars = debounce(createStars, 250);
+let usingMobileStars = window.innerWidth < 768;
+
+function handleResize() {
+  const shouldUseMobile = window.innerWidth < 768;
+  if (shouldUseMobile !== usingMobileStars) {
+    usingMobileStars = shouldUseMobile;
+    createStars();
+  }
+}
+
+const debouncedResize = debounce(handleResize, 250);
 
 window.addEventListener('load', () => {
   setCopyrightYear();
   createStars();
 });
 
-window.addEventListener('resize', debouncedCreateStars);
+window.addEventListener('resize', debouncedResize);
+
+export { debounce, handleResize };
