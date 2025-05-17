@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Creative portfolio of Tora Blaze." />
+    <meta property="og:title" content="Tora Blaze - Creative Portfolio" />
+    <meta property="og:description" content="Whimsical illustrations and cosmic designs by Tora Blaze." />
     <title>Tora Blaze - Creative Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,120 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Pacifico&display=swap"
       rel="stylesheet"
     />
-    <style>
-      /* Apply Inter font globally */
-      body {
-        font-family: "Inter", sans-serif;
-        /* Gradient background */
-        background-image: linear-gradient(to bottom, #392d51, #624975, #8c5c87);
-        min-height: 100vh;
-        color: #ffffff;
-        /* Prevent horizontal overflow */
-        overflow-x: hidden;
-        /* Flex layout to push footer down */
-        display: flex;
-        flex-direction: column;
-      }
-
-      /* Apply Pacifico font to specific heading elements */
-      .font-pacifico {
-        font-family: "Pacifico", cursive;
-        font-weight: 400; /* Pacifico only has regular weight */
-      }
-
-      /* Make main content area grow */
-      .main-content {
-        flex-grow: 1;
-      }
-
-      /* Star effect styling */
-      .star {
-        position: absolute;
-        width: 2px;
-        height: 2px;
-        background-color: #fcd34d; /* amber-300 */
-        border-radius: 50%;
-        animation: twinkle 2s infinite ease-in-out alternate;
-        pointer-events: none;
-      }
-
-      /* Twinkling animation */
-      @keyframes twinkle {
-        0% {
-          opacity: 0.4;
-          transform: scale(0.8);
-        }
-        100% {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-
-      /* Custom styles for portfolio image aspect ratio and object fit */
-      .portfolio-image-container {
-        aspect-ratio: 4 / 3;
-        overflow: hidden;
-        border-radius: 0.375rem; /* rounded-md */
-      }
-
-      .portfolio-img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
-      }
-
-      /* Hero image specific styles */
-      .hero-img {
-        object-fit: contain;
-        width: 100%;
-        max-width: 600px;
-        height: auto;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      /* About Me image specific styles */
-      .about-img {
-        object-fit: cover;
-        width: 100%;
-        max-width: 450px;
-        height: auto;
-        border-radius: 0.5rem; /* rounded-lg */
-        margin-left: auto;
-        margin-right: auto;
-        /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-          0 4px 6px -2px rgba(0, 0, 0, 0.05); */
-      }
-
-      /* Style for the portfolio item text overlay */
-      .portfolio-item-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: rgba(90, 73, 103, 0.9);
-        color: white;
-        padding: 0.75rem; /* p-3 */
-        text-align: center;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-        border-bottom-left-radius: 0.375rem; /* rounded-b-md */
-        border-bottom-right-radius: 0.375rem;
-        font-weight: 500; /* medium */
-      }
-
-      /* Show overlay text on parent group hover */
-      .group:hover .portfolio-item-overlay {
-        opacity: 1;
-      }
-
-      /* Style changes for image on parent group hover */
-      .group:hover .portfolio-img {
-        filter: brightness(1);
-        transform: scale(1.05);
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="relative">
     <div
@@ -143,7 +33,7 @@
           >
             Tora Blaze
           </h1>
-          <nav class="w-full sm:w-auto">
+          <nav aria-label="Main navigation" class="w-full sm:w-auto">
             <ul
               class="flex justify-center sm:justify-end space-x-6 text-sm font-medium uppercase tracking-wider"
             >
@@ -201,27 +91,27 @@
               </a>
             </div>
             <div class="md:w-1/2 flex justify-center items-center mt-8 md:mt-0">
-              <img
+              <img loading="lazy"
                 src="hero-image.png"
                 alt="Stylized illustration of Tora Blaze pointing upwards with a friendly smile"
-                class="hero-img"
+                class="object-contain w-full max-w-[600px] h-auto mx-auto"
                 onerror="this.onerror=null; this.src='https://placehold.co/600x600/5a4967/ffffff?text=Tora+Here!'; this.alt='Placeholder image for Tora illustration'"
               />
             </div>
           </section>
 
           <section id="interests" class="mb-24 md:mb-32">
-            <h3
+            <h2
               class="font-pacifico text-4xl sm:text-5xl text-center mb-12 sm:mb-16"
             >
               My Interests
-            </h3>
+            </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               <div
-                class="group relative bg-purple-900/50 rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl"
+                class="group portfolio-card"
               >
                 <div class="portfolio-image-container">
-                  <img
+                  <img loading="lazy"
                     src="cat-petting.png"
                     alt="Whimsical illustration of a person gently petting a happy, fluffy cat"
                     class="portfolio-img filter brightness-75"
@@ -232,10 +122,10 @@
               </div>
 
               <div
-                class="group relative bg-purple-900/50 rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl"
+                class="group portfolio-card"
               >
                 <div class="portfolio-image-container">
-                  <img
+                  <img loading="lazy"
                     src="black-hole-boop.png"
                     alt="Cosmic art depicting a hand reaching out to gently touch a stylized black hole"
                     class="portfolio-img filter brightness-75"
@@ -246,10 +136,10 @@
               </div>
 
               <div
-                class="group relative bg-purple-900/50 rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl"
+                class="group portfolio-card"
               >
                 <div class="portfolio-image-container">
-                  <img
+                  <img loading="lazy"
                     src="cheese.png"
                     alt="Cute illustration of a smiling, happy block of cheese with little arms and legs"
                     class="portfolio-img filter brightness-75"
@@ -268,19 +158,19 @@
               <div
                 class="w-full md:w-5/12 flex justify-center mb-8 md:mb-0 order-2 md:order-1"
               >
-                <img
+                <img loading="lazy"
                   src="about-me-image.png"
                   alt="Whimsical illustration representing Tora's creative spirit, perhaps featuring stars or cats"
-                  class="about-img"
+                  class="object-cover w-full max-w-[450px] h-auto rounded-lg mx-auto"
                   onerror="this.onerror=null; this.src='https://placehold.co/400x500/5a4967/ffffff?text=About+Tora'; this.alt='Placeholder image for About Me section'"
                 />
               </div>
               <div
                 class="w-full md:w-7/12 text-center md:text-left order-1 md:order-2 max-w-prose"
               >
-                <h3 class="font-pacifico text-4xl sm:text-5xl mb-6">
+                <h2 class="font-pacifico text-4xl sm:text-5xl mb-6">
                   About Me
-                </h3>
+                </h2>
                 <div
                   class="space-y-4 text-lg leading-relaxed text-gray-200 text-justify"
                 >
@@ -307,9 +197,9 @@
             id="contact"
             class="py-12 sm:py-16 text-center rounded-lg bg-indigo-950/20"
           >
-            <h3 class="font-pacifico text-4xl sm:text-5xl mb-6">
+            <h2 class="font-pacifico text-4xl sm:text-5xl mb-6">
               Get In Touch
-            </h3>
+            </h2>
             <p class="mb-8 text-lg text-gray-200">
               Have a project idea or just want to say hi? I'd love to hear from
               you!
