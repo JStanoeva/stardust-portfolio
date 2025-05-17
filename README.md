@@ -2,6 +2,8 @@
 
 Welcome to the official GitHub repository for my personal portfolio website! This project is a vibrant showcase of my creative endeavors as a whimsical illustrator, cosmic dreamer, and aspiring web developer.
 
+* View Here: [Stardust Portfolio](https://jstanoeva.github.io/stardust-portfolio/)
+
 ## ✨ Features
 
 * **Hero Section:** A warm welcome introducing myself and my creative passions.
