@@ -6,6 +6,7 @@ export function createStars() {
   }
   container.innerHTML = '';
   const numStars = window.innerWidth < 768 ? 200 : 1000;
+  const fragment = document.createDocumentFragment();
   for (let i = 0; i < numStars; i++) {
     const star = document.createElement('div');
     star.classList.add('star');
@@ -16,6 +17,7 @@ export function createStars() {
     star.style.width = `${size}px`;
     star.style.height = `${size}px`;
     star.style.opacity = Math.random() * 0.5 + 0.3;
-    container.appendChild(star);
+    fragment.appendChild(star);
   }
+  container.appendChild(fragment);
 }
