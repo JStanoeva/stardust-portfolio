@@ -1,0 +1,17 @@
+{
+  "name": "stardust-portfolio",
+  "version": "1.0.0",
+  "description": "My second portfolio website. Uses HTML, Tailwind CSS, and JavaScript. All images are created in Sora. Made with Gemini's help.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "jsdom": "^22.0.0"
+  }
+}
