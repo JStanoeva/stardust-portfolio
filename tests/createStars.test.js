@@ -1,4 +1,5 @@
 import { JSDOM } from 'jsdom';
+import { jest } from '@jest/globals';
 import { createStars } from '../scripts/createStars.js';
 
 describe('createStars', () => {
